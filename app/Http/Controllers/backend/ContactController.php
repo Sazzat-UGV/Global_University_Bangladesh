@@ -16,7 +16,7 @@ class ContactController extends Controller
     public function index()
     {
         Gate::authorize('contact-list');
-        $contacts = Contact::select('id', 'name', 'email', 'phone', 'city', 'message', 'created_at')->latest('id')->get();
+        $contacts = Contact::select('id', 'name', 'email', 'phone', 'subject', 'message', 'created_at')->latest('id')->get();
         return view('backend.pages.contact.index', compact('contacts'));
     }
 

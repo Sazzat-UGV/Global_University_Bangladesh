@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
         $adminRoleId = Role::where('role_slug', 'admin')->first()->id;
         User::Create([
             'role_id' => $adminRoleId,
-            'name' => 'Sumaiya Rahman Sonchi',
+            'name' => 'Esrat Jahan Akhi',
             'email' => 'admin@gmail.com',
             'email_verified_at' => now(),
             'password' => Hash::make('admin@gmail.com'),
@@ -32,7 +32,7 @@ class UserSeeder extends Seeder
         $managerRoleId = Role::where('role_slug', 'manager')->first()->id;
         User::Create([
             'role_id' => $managerRoleId,
-            'name' => 'System Manager',
+            'name' => 'Prome Akon',
             'email' => 'manager@gmail.com',
             'email_verified_at' => now(),
             'password' => Hash::make('manager@gmail.com'),

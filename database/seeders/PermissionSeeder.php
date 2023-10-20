@@ -80,6 +80,7 @@ class PermissionSeeder extends Seeder
 
 
 
+        
 
 
 
@@ -109,7 +110,7 @@ class PermissionSeeder extends Seeder
                 'permission_slug' => Str::slug($adminSystemAdminPermissionArray[$i]),
             ]);
         }
-        //system admins
+        //system backup
         $adminSystemBackupModule = Module::where('module_name', 'Database Backup')->select('id')->first();
         for ($i = 0; $i < count($adminSystemBackupPermissionArray); $i++) {
             Permission::Create([

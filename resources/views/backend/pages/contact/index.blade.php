@@ -28,7 +28,7 @@
                                         <th>Created at</th>
                                         <th>Name</th>
                                         <th>Email</th>
-                                        <th>City</th>
+                                        <th>Subject</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -39,7 +39,7 @@
                                             <td>{{ $contact->created_at->format('d-M-Y') }}</td>
                                             <td>{{ $contact->name }}</td>
                                             <td>{{ $contact->email }}</td>
-                                            <td>{{ $contact->city }}</td>
+                                            <td>{{ $contact->subject }}</td>
                                             <td class="text-right">
                                                 <div class="actions d-flex justify-content-start">
                                                     <a href="#" class="btn btn-sm btn-outline-primary mr-1"
@@ -78,7 +78,7 @@
                                                             <p><span>Name: {{ $contact->name }}</span></p>
                                                             <p><span>Email: {{ $contact->email }}</span></p>
                                                             <p><span>Phone: {{ $contact->phone }}</span></p>
-                                                            <p><span>City: {{ $contact->city }}</span></p>
+                                                            <p><span>Subject: {{ $contact->subject }}</span></p>
                                                             <p><span>Message: {{ $contact->message }}</span></p>
                                                         </div>
                                                     </div>

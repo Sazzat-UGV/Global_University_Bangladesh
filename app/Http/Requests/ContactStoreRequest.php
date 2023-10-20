@@ -25,7 +25,7 @@ class ContactStoreRequest extends FormRequest
             "name" => "required|string|max:255",
             "email" => "required|email|max:255",
             "phone" => "required|numeric",
-            "city" => "required|string|max:255",
+            "subject" => "required|string|max:255",
             "message" => "required|string|max:2000",
         ];
     }

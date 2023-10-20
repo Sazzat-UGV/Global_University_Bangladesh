@@ -8,6 +8,7 @@ use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\RoleController;
 use App\Http\Controllers\backend\SliderController;
 use App\Http\Controllers\backend\SystemAdminController;
+use App\Http\Controllers\frontend\ContactController as FrontendContactController;
 use App\Http\Controllers\frontend\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,10 +24,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('')->group(function () {
+
+    /*home route*/
     Route::get('/', [HomeController::class, 'homepage'])->name('homepage');
-    Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
-    Route::post('/contact', [HomeController::class, 'contact_post'])->name('contact_post');
+
+    /*contact route*/
+    Route::get('/contact', [FrontendContactController::class, 'contact'])->name('contact');
+    Route::post('/contact', [FrontendContactController::class, 'contact_post'])->name('contact_post');
+
 });
+
+
+
+
+
 
 
 /*backend routes */
