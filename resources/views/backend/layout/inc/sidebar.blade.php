@@ -17,7 +17,11 @@
     <hr class="sidebar-divider">
 
 
-    @if (Auth::user()->haspermission('slider-list') || Auth::user()->haspermission('result-list') || Auth::user()->haspermission('contact-list')||Auth::user()->haspermission('notice-list'))
+    @if (Auth::user()->haspermission('slider-list') ||
+            Auth::user()->haspermission('faculty-list') ||
+            Auth::user()->haspermission('result-list') ||
+            Auth::user()->haspermission('contact-list') ||
+            Auth::user()->haspermission('notice-list'))
         <div class="sidebar-heading">
             Interfaces
         </div>
@@ -33,6 +37,23 @@
                         <a class="collapse-item" href="{{ route('slider.index') }}">Slider List</a>
                         @can('slider-create')
                             <a class="collapse-item" href="{{ route('slider.create') }}">Add New Slider</a>
+                        @endcan
+                    </div>
+                </div>
+            </li>
+        @endcan
+        @can('faculty-list')
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#faculty"
+                    aria-expanded="true" aria-controls="faculty">
+                    <i class="fas fa fa-user-alt"></i>
+                    <span>Faculty</span>
+                </a>
+                <div id="faculty" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('faculty.index') }}">Faculty List</a>
+                        @can('faculty-create')
+                            <a class="collapse-item" href="{{ route('faculty.create') }}">Add New Faculty</a>
                         @endcan
                     </div>
                 </div>

@@ -104,43 +104,43 @@
                                         </li>
 
                                         <li class="menu-item-has-children">
-                                            <a href="cse-faculty.html">Faculty</a>
+                                            <a href="#">Faculty</a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item-has-children right">
-                                                    <a href="cse-faculty.html">Science & Technology</a>
+                                                    <a href="#">Science & Technology</a>
                                                     <ul class="sub-menu right">
-                                                        <li><a href="cse-faculty.html">Computer Science And
+                                                        <li><a href="{{ route('index.faculty',['department'=>'Computer Science and Engineering']) }}">Computer Science And
                                                                 Engineering (CSE)</a></li>
-                                                        <li><a href="eee-faculty.html">Electrical and Electronic
+                                                        <li><a href="{{ route('index.faculty',['department'=>'Electrical and Electronics Engineering']) }}">Electrical and Electronic
                                                                 Engineering(EEE)</a></li>
                                                     </ul>
                                                 </li>
                                                 <li class="menu-item-has-children">
-                                                    <a href="bba-faculty.html">Business Adminstration</a>
+                                                    <a href="#">Business Adminstration</a>
                                                     <ul class="sub-menu right">
-                                                        <li><a href="bba-faculty.html">Bachelor of Business
+                                                        <li><a href="{{ route('index.faculty',['department'=>'Bachelor of Business Administration']) }}">Bachelor of Business
                                                                 Administration (BBA)</a></li>
-                                                        <li><a href="mba-faculty.html">Master of Business
+                                                        <li><a href="{{ route('index.faculty',['department'=>'Master of Business Administration']) }}">Master of Business
                                                                 Administration (MBA)</a></li>
-                                                        <li><a href="emba-faculty.html">Executive MBA (EMBA)</a>
+                                                        <li><a href="{{ route('index.faculty',['department'=>'Executive MBA']) }}">Executive MBA (EMBA)</a>
                                                         </li>
                                                     </ul>
                                                 </li>
                                                 <li class="menu-item-has-children">
-                                                    <a href="llb-faculty.html">LAW</a>
+                                                    <a href="#">LAW</a>
                                                     <ul class="sub-menu right">
-                                                        <li><a href="llb-faculty.html">Bachelor of LAWS (LLB)</a>
+                                                        <li><a href="{{ route('index.faculty',['department'=>'Bachelor of Laws']) }}">Bachelor of LAWS (LLB)</a>
                                                         </li>
-                                                        <li><a href="llm-faculty.html">Master of LLBS (LL.M)</a>
+                                                        <li><a href="{{ route('index.faculty',['department'=>'Master of Laws']) }}">Master of LLBS (LL.M)</a>
                                                         </li>
                                                     </ul>
                                                 </li>
                                                 <li class="menu-item-has-children">
-                                                    <a href="english-faculty.html">Arts & Social Science</a>
+                                                    <a href="#">Arts & Social Science</a>
                                                     <ul class="sub-menu right">
-                                                        <li><a href="english-faculty.html">English</a></li>
-                                                        <li><a href="gub-center">Gub Center for Language</a></li>
-                                                        <li><a href="library-faculty.html">Library & Information
+                                                        <li><a href="{{ route('index.faculty',['department'=>'English']) }}">English</a></li>
+                                                        <li><a href="{{ route('index.faculty',['department'=>'GUB Center for Language']) }}">Gub Center for Language</a></li>
+                                                        <li><a href="{{ route('index.faculty',['department'=>'Library & Information Science']) }}">Library & Information
                                                                 Science</a></li>
                                                     </ul>
                                                 </li>
@@ -150,7 +150,7 @@
                                         <li class="menu">
                                             <a href="{{ route('index.notice') }}">Notices</a>
                                         </li>
-                                        
+
                                         <li class="menu-item-has-children">
                                             <a href="#">Results</a>
                                             <ul class="sub-menu">

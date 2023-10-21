@@ -21,7 +21,6 @@
                             <div class="form-group">
                                 <label>Result For<span class="text-danger">*</span></label>
                                 <select class="custom-select @error('result_for') is-invalid @enderror" name="result_for">
-                                    <option selected>Open this select menu</option>
                                     <option value="CSE">CSE</option>
                                     <option value="EEE">EEE</option>
                                     <option value="BBA">BBA</option>
