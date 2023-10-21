@@ -43,6 +43,13 @@ class PermissionSeeder extends Seeder
             'Slider Edit',
             'Slider Delete',
         ];
+        $adminResultsPermissionArray = [
+            'Result List',
+            'Result Create',
+            'Result Edit',
+            'Result Download',
+            'Result Delete',
+        ];
         $adminContactsPermissionArray = [
             'Contact List',
             'Contact Delete',
@@ -66,6 +73,43 @@ class PermissionSeeder extends Seeder
                 'permission_slug' => Str::slug($adminSlidersPermissionArray[$i]),
             ]);
         }
+        //Results
+        $adminResultsModule = Module::where('module_name', 'Results')->select('id')->first();
+        for ($i = 0; $i < count($adminResultsPermissionArray); $i++) {
+            Permission::Create([
+                'module_id' => $adminResultsModule->id,
+                'permission_name' => $adminResultsPermissionArray[$i],
+                'permission_slug' => Str::slug($adminResultsPermissionArray[$i]),
+            ]);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //contacts
         $adminContactsModule = Module::where('module_name', 'Contacts')->select('id')->first();
         for ($i = 0; $i < count($adminContactsPermissionArray); $i++) {
@@ -75,23 +119,6 @@ class PermissionSeeder extends Seeder
                 'permission_slug' => Str::slug($adminContactsPermissionArray[$i]),
             ]);
         }
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
         //system roles
         $adminSystemRoleModule = Module::where('module_name', 'System Roles')->select('id')->first();
         for ($i = 0; $i < count($adminSystemRolePermissionArray); $i++) {

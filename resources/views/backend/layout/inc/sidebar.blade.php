@@ -21,21 +21,40 @@
         <div class="sidebar-heading">
             Interfaces
         </div>
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#slider"
-                aria-expanded="true" aria-controls="slider">
-                <i class="fas fa-fw fa-sliders-h"></i>
-                <span>Sliders</span>
-            </a>
-            <div id="slider" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="{{ route('slider.index') }}">Slider List</a>
-                    @can('slider-create')
-                        <a class="collapse-item" href="{{ route('slider.create') }}">Add New Slider</a>
-                    @endcan
+        @can('slider-list')
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#slider"
+                    aria-expanded="true" aria-controls="slider">
+                    <i class="fas fa-fw fa-sliders-h"></i>
+                    <span>Sliders</span>
+                </a>
+                <div id="slider" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('slider.index') }}">Slider List</a>
+                        @can('slider-create')
+                            <a class="collapse-item" href="{{ route('slider.create') }}">Add New Slider</a>
+                        @endcan
+                    </div>
                 </div>
-            </div>
-        </li>
+            </li>
+        @endcan
+        @can('result-list')
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#result"
+                    aria-expanded="true" aria-controls="result">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>Results</span>
+                </a>
+                <div id="result" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('result.index') }}">Result List</a>
+                        @can('result-create')
+                            <a class="collapse-item" href="{{ route('result.create') }}">Add New Result</a>
+                        @endcan
+                    </div>
+                </div>
+            </li>
+        @endcan
 
         @can('contact-list')
             <li class="nav-item">
@@ -44,7 +63,6 @@
                     <span>Contacts</span></a>
             </li>
         @endcan
-        
     @endif
 
 
@@ -90,37 +108,41 @@
         <div class="sidebar-heading">
             System Administration
         </div>
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#role" aria-expanded="true"
-                aria-controls="role">
-                <i class="fas fa-fw fa-user-friends"></i>
-                <span>System Roles</span>
-            </a>
-            <div id="role" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="{{ route('role.index') }}">Role List</a>
-                    @can('role-create')
-                        <a class="collapse-item" href="{{ route('role.create') }}">Add New Role</a>
-                    @endcan
+        @can('role-list')
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#role" aria-expanded="true"
+                    aria-controls="role">
+                    <i class="fas fa-fw fa-user-friends"></i>
+                    <span>System Roles</span>
+                </a>
+                <div id="role" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('role.index') }}">Role List</a>
+                        @can('role-create')
+                            <a class="collapse-item" href="{{ route('role.create') }}">Add New Role</a>
+                        @endcan
+                    </div>
                 </div>
-            </div>
-        </li>
+            </li>
+        @endcan
 
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#admin"
-                aria-expanded="true" aria-controls="admin">
-                <i class="fas fa-fw fa-user-cog"></i>
-                <span>System Admins</span>
-            </a>
-            <div id="admin" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="{{ route('admin.index') }}">Admin List</a>
-                    @can('admin-create')
-                        <a class="collapse-item" href="{{ route('admin.create') }}">Add New Admin</a>
-                    @endcan
+        @can('admin-list')
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#admin"
+                    aria-expanded="true" aria-controls="admin">
+                    <i class="fas fa-fw fa-user-cog"></i>
+                    <span>System Admins</span>
+                </a>
+                <div id="admin" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('admin.index') }}">Admin List</a>
+                        @can('admin-create')
+                            <a class="collapse-item" href="{{ route('admin.create') }}">Add New Admin</a>
+                        @endcan
+                    </div>
                 </div>
-            </div>
-        </li>
+            </li>
+        @endcan
     @endif
 
 

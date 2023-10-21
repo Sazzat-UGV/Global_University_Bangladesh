@@ -150,17 +150,27 @@
                                             <a href="notice.html">Notices</a>
                                         </li>
                                         <li class="menu-item-has-children">
-                                            <a href="result.html">Results</a>
+                                            <a href="#">Results</a>
                                             <ul class="sub-menu">
-                                                <li><a href="result.html">CSE Results</a></li>
-                                                <li><a href="result.html">EEE Results</a></li>
-                                                <li><a href="result.html">BBA Results</a></li>
-                                                <li><a href="result.html">MBA Results</a></li>
-                                                <li><a href="result.html">EMBA Results</a></li>
-                                                <li><a href="result.html">LLB Results</a></li>
-                                                <li><a href="result.html">LLM Results</a></li>
-                                                <li><a href="result.html">ENGLISH Results</a></li>
-                                                <li><a href="result.html">LIBRARY & INFORMATION SCIENCE
+                                                <li><a href="{{ route('index.result', ['department' => 'CSE']) }}">CSE
+                                                        Results</a></li>
+                                                <li><a href="{{ route('index.result', ['department' => 'EEE']) }}">EEE
+                                                        Results</a></li>
+                                                <li><a href="{{ route('index.result', ['department' => 'BBA']) }}">BBA
+                                                        Results</a></li>
+                                                <li><a href="{{ route('index.result', ['department' => 'MBA']) }}">MBA
+                                                        Results</a></li>
+                                                <li><a href="{{ route('index.result', ['department' => 'EMBA']) }}">EMBA
+                                                        Results</a></li>
+                                                <li><a href="{{ route('index.result', ['department' => 'LLB']) }}">LLB
+                                                        Results</a></li>
+                                                <li><a href="{{ route('index.result', ['department' => 'LLM']) }}">LLM
+                                                        Results</a></li>
+                                                <li><a href="{{ route('index.result', ['department' => 'ENGLISH']) }}">ENGLISH
+                                                        Results</a></li>
+                                                <li><a
+                                                        href="{{ route('index.result', ['department' => 'LIBRARY & INFORMATION SCIENCE']) }}">LIBRARY
+                                                        & INFORMATION SCIENCE
                                                         Results</a></li>
                                             </ul>
                                         </li>
