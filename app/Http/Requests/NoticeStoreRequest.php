@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ResultUpdateRequest extends FormRequest
+class NoticeStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,9 +22,8 @@ class ResultUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "result_for" => "required|string|max:200",
-            "result_title" => "required|string|max:255",
-            "file" =>  "nullable|mimes:pdf",
+            "notice_title" => "required|unique:notices|string|max:255",
+            "file" =>  "required|mimes:pdf",
         ];
     }
 }

@@ -18,6 +18,7 @@ class ModuleSeeder extends Seeder
             'Dashboard',
             'Sliders',
             'Results',
+            'Notices',
             'Contacts',
             'System Roles',
             'System Admins',

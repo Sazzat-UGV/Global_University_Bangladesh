@@ -37,30 +37,13 @@ class ResultController extends Controller
     public function store(ResultStoreRequest $request)
     {
         Gate::authorize('result-create');
-        if ($request->hasFile('file')) {
-            $file = $request->file('file');
-            $fileName = $file->getClientOriginalName();
-            if ($file->getClientOriginalExtension() === 'pdf') {
-                $existingPDF = Result::where('file', $fileName)->first();
-                if ($existingPDF) {
-                    Toastr::error('Please rename the file before upload');
-                    return redirect()->route('result.index');
-                } else {
-                    $upload = $file->move(public_path('uploads/result'), $fileName);
-                    $filePath = public_path('uploads/result/' . $fileName);
-                    Result::create([
-                        'result_for' => $request->result_for,
-                        'result_title' => $request->result_title,
-                        'file' => $fileName,
-                    ]);
-                    Toastr::success('Document upload successfully');
-                    return redirect()->route('result.index');
-                }
-            } else {
-                Toastr::error('An error occur when upload the file');
-                return redirect()->route('result.index');
-            }
-        }
+        $result = Result::create([
+            'result_for' => $request->result_for,
+            'result_title' => $request->result_title,
+        ]);
+        $this->file_upload($request, $result->id);
+        Toastr::success('Result upload successfully');
+        return redirect()->route('result.index');
     }
 
     /**
@@ -91,8 +74,10 @@ class ResultController extends Controller
         $result->update([
             'result_for' => $request->result_for,
             'result_title' => $request->result_title,
+
         ]);
-        Toastr::success('Document upload successfully');
+        $this->file_upload($request, $result->id);
+        Toastr::success('Result upload successfully');
         return redirect()->route('result.index');
     }
 
@@ -118,6 +103,8 @@ class ResultController extends Controller
         }
     }
 
+
+
     public function changeStatus(string $id)
     {
         $result = Result::find($id);
@@ -131,5 +118,31 @@ class ResultController extends Controller
             'type' => 'success',
             'message' => 'Status Updated',
         ]);
+    }
+
+
+
+    public function file_upload($request, $result_id)
+    {
+        $result = Result::findOrFail($result_id);
+
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $fileExt = $file->getClientOriginalExtension();
+            $fileNewName = $result_id . '.' . $fileExt;
+
+            if ($file->getClientOriginalExtension() === 'pdf') {
+                if ($result->file === $fileNewName) {
+                    // Delete the old file if the new file has the same name
+                    $filePath = public_path('uploads/result/' . $fileNewName);
+                    if (file_exists($filePath)) {
+                        unlink($filePath);
+                    }
+                }
+                $upload = $file->move(public_path('uploads/result'), $fileNewName);
+                $result->file = $fileNewName;
+                $result->save();
+            }
+        }
     }
 }

@@ -17,7 +17,7 @@
     <hr class="sidebar-divider">
 
 
-    @if (Auth::user()->haspermission('slider-list') || Auth::user()->haspermission('contact-list'))
+    @if (Auth::user()->haspermission('slider-list') || Auth::user()->haspermission('result-list') || Auth::user()->haspermission('contact-list')||Auth::user()->haspermission('notice-list'))
         <div class="sidebar-heading">
             Interfaces
         </div>
@@ -50,6 +50,23 @@
                         <a class="collapse-item" href="{{ route('result.index') }}">Result List</a>
                         @can('result-create')
                             <a class="collapse-item" href="{{ route('result.create') }}">Add New Result</a>
+                        @endcan
+                    </div>
+                </div>
+            </li>
+        @endcan
+        @can('notice-list')
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#notice"
+                    aria-expanded="true" aria-controls="notice">
+                    <i class="fas fa-paperclip"></i>
+                    <span>Notices</span>
+                </a>
+                <div id="notice" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('notice.index') }}">Notice List</a>
+                        @can('notice-create')
+                            <a class="collapse-item" href="{{ route('notice.create') }}">Add New Notice</a>
                         @endcan
                     </div>
                 </div>

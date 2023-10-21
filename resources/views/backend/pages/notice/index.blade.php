@@ -1,6 +1,6 @@
 @extends('backend.layout.master')
 @section('title')
-    Result List
+    Notice List
 @endsection
 @push('admin_style')
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
@@ -14,16 +14,16 @@
     </style>
 @endpush
 @section('content')
-    @include('backend.layout.inc.breadcump', ['page_name' => 'Result List'])
+    @include('backend.layout.inc.breadcump', ['page_name' => 'Notice List'])
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="card mb-3">
                     <div class="card-body">
-                        @can('result-create')
+                        @can('notice-create')
                             <div class="d-flex justify-content-end">
-                                <a href="{{ route('result.create') }}" class=" btn btn-primary shadow-sm"><i
-                                        class="fas fa-plus-circle text-white-50"></i> Create New Result</a>
+                                <a href="{{ route('notice.create') }}" class=" btn btn-primary shadow-sm"><i
+                                        class="fas fa-plus-circle text-white-50"></i> Create New Notice</a>
                             </div>
                         @endcan
                         <div class="table-responsive text-nowrap py-4 ">
@@ -32,47 +32,45 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Published at</th>
-                                        <th>Result For</th>
-                                        <th>Result Title</th>
-                                        @can('result-edit')
+                                        <th>Notice Title</th>
+                                        @can('notice-edit')
                                             <th>Status</th>
                                         @endcan
-                                        @if (Auth::user()->haspermission('result-edit') ||
-                                                Auth::user()->haspermission('result-delete') ||
-                                                Auth::user()->haspermission('result-download'))
+                                        @if (Auth::user()->haspermission('notice-edit') ||
+                                                Auth::user()->haspermission('notice-delete') ||
+                                                Auth::user()->haspermission('notice-download'))
                                             <th>Actions</th>
                                         @endif
                                     </tr>
                                 </thead>
                                 <tbody class="table-border-bottom-0">
-                                    @foreach ($results as $index=>$result)
+                                    @foreach ($notices as $index=>$notice)
                                         <tr>
                                             <td class="text-wrap"><strong>{{ $index + 1 }}</strong></td>
-                                            <td class="text-wrap">{{ $result->created_at->format('d-M-Y') }}</td>
-                                            <td class="text-wrap">{{ $result->result_for }}</td>
-                                            <td class="text-wrap">{{ $result->result_title }}</td>
+                                            <td class="text-wrap">{{ $notice->created_at->format('d-M-Y') }}</td>
+                                            <td class="text-wrap">{{ $notice->notice_title }}</td>
                                             <td class="text-wrap">
                                                 <div class="custom-control custom-switch">
                                                     <input class="custom-control-input toggle-class" type="checkbox"
-                                                        data-id="{{ $result->id }}" id="result-{{ $result->id }}"
-                                                        {{ $result->is_active ? 'checked' : '' }}>
+                                                        data-id="{{ $notice->id }}" id="notice-{{ $notice->id }}"
+                                                        {{ $notice->is_active ? 'checked' : '' }}>
                                                     <label class="custom-control-label"
-                                                        for="result-{{ $result->id }}"></label>
+                                                        for="notice-{{ $notice->id }}"></label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="actions d-flex justify-content-start">
-                                                    @if (Auth::user()->haspermission('result-download'))
+                                                    @if (Auth::user()->haspermission('notice-download'))
                                                         <div class="">
-                                                            <a href="{{ route('admin.downloadResult', ['id' => $result->id, 'file_name' => $result->file]) }}"
-                                                                class="btn btn-sm btn-outline-primary mr-1" target="blanck">
+                                                            <a href="{{ route('admin.downloadNotice', ['id' => $notice->id, 'file_name' => $notice->file]) }}"
+                                                                class="btn btn-sm btn-outline-primary mr-1" target="blank">
                                                                 <i class="fas fa-download"></i>
                                                             </a>
                                                         </div>
                                                     @endif
-                                                    @if (Auth::user()->haspermission('result-edit'))
+                                                    @if (Auth::user()->haspermission('notice-edit'))
                                                         <div class="">
-                                                            <a href="{{ route('result.edit', $result->id) }}"
+                                                            <a href="{{ route('notice.edit', $notice->id) }}"
                                                                 class="btn btn-sm btn-outline-primary mr-1">
                                                                 <i class="fas fa-pen"></i>
                                                             </a>
@@ -80,8 +78,8 @@
                                                     @endif
 
 
-                                                    @if (Auth::user()->haspermission('result-delete'))
-                                                        <form action="{{ route('result.destroy', $result->id) }}"
+                                                    @if (Auth::user()->haspermission('notice-delete'))
+                                                        <form action="{{ route('notice.destroy', $notice->id) }}"
                                                             method="POST">
                                                             @csrf
                                                             @method('DELETE')
@@ -120,7 +118,7 @@
                 $.ajax({
                     type: "GET",
                     dataType: "json",
-                    url: '/admin/result/is_active/' + item_id,
+                    url: '/admin/notice/is_active/' + item_id,
                     success: function(response) {
                         console.log(response);
                         Swal.fire(

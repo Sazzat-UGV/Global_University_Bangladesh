@@ -51,6 +51,17 @@
                                 @enderror
                             </div>
 
+                            <div class="form-group">
+                                <label>File (PDF)<span class="text-danger">*</span></label>
+                                <input type="file" name="file"
+                                    class="form-control p-1 @error('file')
+                                is-invalid
+                                @enderror">
+                                @error('file')
+                                    <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                                @enderror
+                            </div>
+
                             <button class="btn btn-warning" type="submit">Save Changes</button>
                         </form>
                     </div>

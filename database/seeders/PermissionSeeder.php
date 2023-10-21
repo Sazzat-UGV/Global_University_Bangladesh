@@ -50,6 +50,13 @@ class PermissionSeeder extends Seeder
             'Result Download',
             'Result Delete',
         ];
+        $adminNoticesPermissionArray = [
+            'Notice List',
+            'Notice Create',
+            'Notice Edit',
+            'Notice Download',
+            'Notice Delete',
+        ];
         $adminContactsPermissionArray = [
             'Contact List',
             'Contact Delete',
@@ -80,6 +87,15 @@ class PermissionSeeder extends Seeder
                 'module_id' => $adminResultsModule->id,
                 'permission_name' => $adminResultsPermissionArray[$i],
                 'permission_slug' => Str::slug($adminResultsPermissionArray[$i]),
+            ]);
+        }
+        //Results
+        $adminNoticesModule = Module::where('module_name', 'Notices')->select('id')->first();
+        for ($i = 0; $i < count($adminNoticesPermissionArray); $i++) {
+            Permission::Create([
+                'module_id' => $adminNoticesModule->id,
+                'permission_name' => $adminNoticesPermissionArray[$i],
+                'permission_slug' => Str::slug($adminNoticesPermissionArray[$i]),
             ]);
         }
 

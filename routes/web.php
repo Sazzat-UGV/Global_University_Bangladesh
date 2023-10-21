@@ -5,6 +5,7 @@ use App\Http\Controllers\backend\auth\LoginController;
 use App\Http\Controllers\backend\BackupDatabaseController;
 use App\Http\Controllers\backend\ContactController;
 use App\Http\Controllers\backend\DashboardController;
+use App\Http\Controllers\backend\NoticeController;
 use App\Http\Controllers\backend\ResultController;
 use App\Http\Controllers\backend\RoleController;
 use App\Http\Controllers\backend\SliderController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\backend\SystemAdminController;
 use App\Http\Controllers\DownloadPDFController;
 use App\Http\Controllers\frontend\ContactController as FrontendContactController;
 use App\Http\Controllers\frontend\HomeController;
+use App\Http\Controllers\frontend\NoticeController as FrontendNoticeController;
 use App\Http\Controllers\frontend\ResultController as FrontendResultController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +39,7 @@ Route::prefix('')->group(function () {
 
     /*result route*/
     Route::get('/result/{department}', [FrontendResultController::class, 'index'])->name('index.result');
+    Route::get('/notice', [FrontendNoticeController::class, 'index'])->name('index.notice');
 
 });
 
@@ -74,15 +77,18 @@ Route::prefix('admin')->group(function () {
     Route::resource('slider', SliderController::class);
     Route::resource('contact', ContactController::class)->only(['index','destroy']);
     Route::resource('result', ResultController::class);
+    Route::resource('notice', NoticeController::class);
 
     /*Ajax call */
     Route::get('check/is_active/{id}', [SystemAdminController::class, 'changeStatus'])->name('admin.active.ajax');
     Route::get('slider/is_active/{id}', [SliderController::class, 'changeStatus'])->name('admin.active.ajax');
     Route::get('result/is_active/{id}', [ResultController::class, 'changeStatus'])->name('admin.active.ajax');
+    Route::get('notice/is_active/{id}', [NoticeController::class, 'changeStatus'])->name('admin.active.ajax');
 
 
     /*download pdf route*/
     Route::get('download-result/{id}/{file_name}',[DownloadPDFController::class,'downloadResult'])->name('admin.downloadResult');
+    Route::get('download-notice/{id}/{file_name}',[DownloadPDFController::class,'downloadNotice'])->name('admin.downloadNotice');
 
     /*System backup route*/
     Route::get('/backup/download/{file_name}', [BackupDatabaseController::class, 'download'])->name('admin.backupDownload');

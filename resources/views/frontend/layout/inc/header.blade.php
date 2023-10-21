@@ -91,6 +91,19 @@
                                         </li>
 
                                         <li class="menu-item-has-children">
+                                            <a href="board.html">Authorities</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="board.html">Board of Trustees</a></li>
+                                                <li class="menu-item-has-children">
+                                                    <a href="syndicate.html">Syndicate Members</a>
+                                                </li>
+                                                <li class="menu-item-has-children">
+                                                    <a href="academic.html">Academic Members</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="menu-item-has-children">
                                             <a href="cse-faculty.html">Faculty</a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item-has-children right">
@@ -134,21 +147,10 @@
                                             </ul>
                                         </li>
 
-                                        <li class="menu-item-has-children">
-                                            <a href="board.html">Authorities</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="board.html">Board of Trustees</a></li>
-                                                <li class="menu-item-has-children">
-                                                    <a href="syndicate.html">Syndicate Members</a>
-                                                </li>
-                                                <li class="menu-item-has-children">
-                                                    <a href="academic.html">Academic Members</a>
-                                                </li>
-                                            </ul>
-                                        </li>
                                         <li class="menu">
-                                            <a href="notice.html">Notices</a>
+                                            <a href="{{ route('index.notice') }}">Notices</a>
                                         </li>
+                                        
                                         <li class="menu-item-has-children">
                                             <a href="#">Results</a>
                                             <ul class="sub-menu">
@@ -166,7 +168,8 @@
                                                         Results</a></li>
                                                 <li><a href="{{ route('index.result', ['department' => 'LLM']) }}">LLM
                                                         Results</a></li>
-                                                <li><a href="{{ route('index.result', ['department' => 'ENGLISH']) }}">ENGLISH
+                                                <li><a
+                                                        href="{{ route('index.result', ['department' => 'ENGLISH']) }}">ENGLISH
                                                         Results</a></li>
                                                 <li><a
                                                         href="{{ route('index.result', ['department' => 'LIBRARY & INFORMATION SCIENCE']) }}">LIBRARY
