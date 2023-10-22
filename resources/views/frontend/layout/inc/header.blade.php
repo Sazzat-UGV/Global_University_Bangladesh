@@ -91,14 +91,20 @@
                                         </li>
 
                                         <li class="menu-item-has-children">
-                                            <a href="board.html">Authorities</a>
+                                            <a href="#">Authorities</a>
                                             <ul class="sub-menu">
-                                                <li><a href="board.html">Board of Trustees</a></li>
+                                                <li><a
+                                                        href="{{ route('index.authority', ['type' => 'Board of Trustees']) }}">Board
+                                                        of Trustees</a></li>
                                                 <li class="menu-item-has-children">
-                                                    <a href="syndicate.html">Syndicate Members</a>
+                                                    <a
+                                                        href="{{ route('index.authority', ['type' => 'Syndicate Members']) }}">Syndicate
+                                                        Members</a>
                                                 </li>
                                                 <li class="menu-item-has-children">
-                                                    <a href="academic.html">Academic Members</a>
+                                                    <a
+                                                        href="{{ route('index.authority', ['type' => 'Academic Members']) }}">Academic
+                                                        Members</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -109,38 +115,58 @@
                                                 <li class="menu-item-has-children right">
                                                     <a href="#">Science & Technology</a>
                                                     <ul class="sub-menu right">
-                                                        <li><a href="{{ route('index.faculty',['department'=>'Computer Science and Engineering']) }}">Computer Science And
+                                                        <li><a
+                                                                href="{{ route('index.faculty', ['department' => 'Computer Science and Engineering']) }}">Computer
+                                                                Science And
                                                                 Engineering (CSE)</a></li>
-                                                        <li><a href="{{ route('index.faculty',['department'=>'Electrical and Electronics Engineering']) }}">Electrical and Electronic
+                                                        <li><a
+                                                                href="{{ route('index.faculty', ['department' => 'Electrical and Electronics Engineering']) }}">Electrical
+                                                                and Electronic
                                                                 Engineering(EEE)</a></li>
                                                     </ul>
                                                 </li>
                                                 <li class="menu-item-has-children">
                                                     <a href="#">Business Adminstration</a>
                                                     <ul class="sub-menu right">
-                                                        <li><a href="{{ route('index.faculty',['department'=>'Bachelor of Business Administration']) }}">Bachelor of Business
+                                                        <li><a
+                                                                href="{{ route('index.faculty', ['department' => 'Bachelor of Business Administration']) }}">Bachelor
+                                                                of Business
                                                                 Administration (BBA)</a></li>
-                                                        <li><a href="{{ route('index.faculty',['department'=>'Master of Business Administration']) }}">Master of Business
+                                                        <li><a
+                                                                href="{{ route('index.faculty', ['department' => 'Master of Business Administration']) }}">Master
+                                                                of Business
                                                                 Administration (MBA)</a></li>
-                                                        <li><a href="{{ route('index.faculty',['department'=>'Executive MBA']) }}">Executive MBA (EMBA)</a>
+                                                        <li><a
+                                                                href="{{ route('index.faculty', ['department' => 'Executive MBA']) }}">Executive
+                                                                MBA (EMBA)</a>
                                                         </li>
                                                     </ul>
                                                 </li>
                                                 <li class="menu-item-has-children">
                                                     <a href="#">LAW</a>
                                                     <ul class="sub-menu right">
-                                                        <li><a href="{{ route('index.faculty',['department'=>'Bachelor of Laws']) }}">Bachelor of LAWS (LLB)</a>
+                                                        <li><a
+                                                                href="{{ route('index.faculty', ['department' => 'Bachelor of Laws']) }}">Bachelor
+                                                                of LAWS (LLB)</a>
                                                         </li>
-                                                        <li><a href="{{ route('index.faculty',['department'=>'Master of Laws']) }}">Master of LLBS (LL.M)</a>
+                                                        <li><a
+                                                                href="{{ route('index.faculty', ['department' => 'Master of Laws']) }}">Master
+                                                                of LLBS (LL.M)</a>
                                                         </li>
                                                     </ul>
                                                 </li>
                                                 <li class="menu-item-has-children">
                                                     <a href="#">Arts & Social Science</a>
                                                     <ul class="sub-menu right">
-                                                        <li><a href="{{ route('index.faculty',['department'=>'English']) }}">English</a></li>
-                                                        <li><a href="{{ route('index.faculty',['department'=>'GUB Center for Language']) }}">Gub Center for Language</a></li>
-                                                        <li><a href="{{ route('index.faculty',['department'=>'Library & Information Science']) }}">Library & Information
+                                                        <li><a
+                                                                href="{{ route('index.faculty', ['department' => 'English']) }}">English</a>
+                                                        </li>
+                                                        <li><a
+                                                                href="{{ route('index.faculty', ['department' => 'GUB Center for Language']) }}">Gub
+                                                                Center for Language</a></li>
+                                                        <li><a
+                                                                href="{{ route('index.faculty', ['department' => 'Library & Information Science']) }}">Library
+                                                                & Information
                                                                 Science</a></li>
                                                     </ul>
                                                 </li>

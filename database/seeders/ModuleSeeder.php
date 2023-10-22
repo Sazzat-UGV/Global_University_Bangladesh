@@ -18,6 +18,7 @@ class ModuleSeeder extends Seeder
             'Dashboard',
             'Sliders',
             'Faculty',
+            'Authority',
             'Results',
             'Notices',
             'Contacts',

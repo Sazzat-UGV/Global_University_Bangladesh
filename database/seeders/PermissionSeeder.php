@@ -63,6 +63,12 @@ class PermissionSeeder extends Seeder
             'Faculty Edit',
             'Faculty Delete',
         ];
+        $adminAuthorityPermissionArray = [
+            'Authority List',
+            'Authority Create',
+            'Authority Edit',
+            'Authority Delete',
+        ];
         $adminContactsPermissionArray = [
             'Contact List',
             'Contact Delete',
@@ -93,6 +99,15 @@ class PermissionSeeder extends Seeder
                 'module_id' => $adminFacultyModule->id,
                 'permission_name' => $adminFacultyPermissionArray[$i],
                 'permission_slug' => Str::slug($adminFacultyPermissionArray[$i]),
+            ]);
+        }
+        //Authority
+        $adminAuthorityModule = Module::where('module_name', 'Authority')->select('id')->first();
+        for ($i = 0; $i < count($adminAuthorityPermissionArray); $i++) {
+            Permission::Create([
+                'module_id' => $adminAuthorityModule->id,
+                'permission_name' => $adminAuthorityPermissionArray[$i],
+                'permission_slug' => Str::slug($adminAuthorityPermissionArray[$i]),
             ]);
         }
         //Results

@@ -19,6 +19,7 @@
 
     @if (Auth::user()->haspermission('slider-list') ||
             Auth::user()->haspermission('faculty-list') ||
+            Auth::user()->haspermission('authority-list') ||
             Auth::user()->haspermission('result-list') ||
             Auth::user()->haspermission('contact-list') ||
             Auth::user()->haspermission('notice-list'))
@@ -54,6 +55,23 @@
                         <a class="collapse-item" href="{{ route('faculty.index') }}">Faculty List</a>
                         @can('faculty-create')
                             <a class="collapse-item" href="{{ route('faculty.create') }}">Add New Faculty</a>
+                        @endcan
+                    </div>
+                </div>
+            </li>
+        @endcan
+        @can('authority-list')
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#authority"
+                    aria-expanded="true" aria-controls="authority">
+                    <i class="fas fa fa-user-check"></i>
+                    <span>Authority</span>
+                </a>
+                <div id="authority" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('authority.index') }}">Authority List</a>
+                        @can('authority-create')
+                            <a class="collapse-item" href="{{ route('authority.create') }}">Add New Authority</a>
                         @endcan
                     </div>
                 </div>
@@ -148,8 +166,8 @@
         </div>
         @can('role-list')
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#role" aria-expanded="true"
-                    aria-controls="role">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#role"
+                    aria-expanded="true" aria-controls="role">
                     <i class="fas fa-fw fa-user-friends"></i>
                     <span>System Roles</span>
                 </a>
