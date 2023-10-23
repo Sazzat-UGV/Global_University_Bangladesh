@@ -22,6 +22,7 @@
             Auth::user()->haspermission('authority-list') ||
             Auth::user()->haspermission('result-list') ||
             Auth::user()->haspermission('contact-list') ||
+            Auth::user()->haspermission('requirment-list') ||
             Auth::user()->haspermission('notice-list'))
         <div class="sidebar-heading">
             Interfaces
@@ -106,6 +107,23 @@
                         <a class="collapse-item" href="{{ route('notice.index') }}">Notice List</a>
                         @can('notice-create')
                             <a class="collapse-item" href="{{ route('notice.create') }}">Add New Notice</a>
+                        @endcan
+                    </div>
+                </div>
+            </li>
+        @endcan
+        @can('requirment-list')
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#requirment-list"
+                    aria-expanded="true" aria-controls="requirment-list">
+                    <i class="fas fa-fw fa-graduation-cap"></i>
+                    <span>Admission Requirments</span>
+                </a>
+                <div id="requirment-list" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('requirment.index') }}">Requirment List</a>
+                        @can('requirment-create')
+                            <a class="collapse-item" href="{{ route('requirment.create') }}">Add New Requirment</a>
                         @endcan
                     </div>
                 </div>

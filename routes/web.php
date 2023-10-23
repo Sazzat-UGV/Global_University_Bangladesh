@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\backend\AdminController;
+use App\Http\Controllers\backend\AdmissionController;
+use App\Http\Controllers\backend\AdmissionRequirmentController;
 use App\Http\Controllers\backend\auth\LoginController;
 use App\Http\Controllers\backend\AuthorityController;
 use App\Http\Controllers\backend\BackupDatabaseController;
@@ -13,6 +15,7 @@ use App\Http\Controllers\backend\RoleController;
 use App\Http\Controllers\backend\SliderController;
 use App\Http\Controllers\backend\SystemAdminController;
 use App\Http\Controllers\DownloadPDFController;
+use App\Http\Controllers\frontend\AdmissionRequirmentController as FrontendAdmissionRequirmentController;
 use App\Http\Controllers\frontend\AuthorityController as FrontendAuthorityController;
 use App\Http\Controllers\frontend\ContactController as FrontendContactController;
 use App\Http\Controllers\frontend\FacultyController as FrontendFacultyController;
@@ -46,6 +49,7 @@ Route::prefix('')->group(function () {
     Route::get('/notice', [FrontendNoticeController::class, 'index'])->name('index.notice');
     Route::get('/faculty/{department}', [FrontendFacultyController::class, 'index'])->name('index.faculty');
     Route::get('/authority/{type}', [FrontendAuthorityController::class, 'index'])->name('index.authority');
+    Route::get('/admission/{type}', [FrontendAdmissionRequirmentController::class, 'index'])->name('index.admission');
 
 });
 
@@ -86,6 +90,7 @@ Route::prefix('admin')->group(function () {
     Route::resource('notice', NoticeController::class);
     Route::resource('faculty', FacultyController::class);
     Route::resource('authority', AuthorityController::class);
+    Route::resource('requirment', AdmissionRequirmentController::class);
 
     /*Ajax call */
     Route::get('check/is_active/{id}', [SystemAdminController::class, 'changeStatus'])->name('admin.active.ajax');
@@ -94,6 +99,7 @@ Route::prefix('admin')->group(function () {
     Route::get('notice/is_active/{id}', [NoticeController::class, 'changeStatus'])->name('admin.active.ajax');
     Route::get('faculty/is_active/{id}', [FacultyController::class, 'changeStatus'])->name('admin.active.ajax');
     Route::get('authority/is_active/{id}', [AuthorityController::class, 'changeStatus'])->name('admin.active.ajax');
+    Route::get('requirment/is_active/{id}', [AdmissionRequirmentController::class, 'changeStatus'])->name('admin.active.ajax');
 
 
     /*download pdf route*/

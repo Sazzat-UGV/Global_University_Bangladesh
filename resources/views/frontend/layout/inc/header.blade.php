@@ -61,29 +61,13 @@
                                                 href="{{ route('homepage') }}">Home</a>
                                         </li>
                                         <li class="menu-item-has-children ">
-                                            <a href="undergraduate.html">Admission</a>
+                                            <a href="#">Admission</a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item-has-children">
-                                                    <a href="undergraduate.html">Undergraduate Admission</a>
-                                                    <ul class="sub-menu right">
-                                                        <li><a href="undergraduate.html">Computer Science And
-                                                                Engineering (CSE)</a></li>
-                                                        <li><a href="eee.html">Electrical and Electronic
-                                                                Engineering(EEE)</a></li>
-                                                        <li><a href="bba.html">Bachelor of Business Administration
-                                                                (BBA)</a></li>
-                                                        <li><a href="llb.html">Bachelor of Laws (LL.B)</a></li>
-                                                    </ul>
+                                                    <a href="{{ route('index.admission',['type'=>'Undergraduate Admission']) }}">Undergraduate Admission</a>
                                                 </li>
                                                 <li class="menu-item-has-children">
-                                                    <a href="postgraduate.html">Postgraduate Admission</a>
-                                                    <ul class="sub-menu right">
-                                                        <li><a href="postgraduate.html">Master of Laws (LL.M)</a>
-                                                        </li>
-                                                        <li><a href="mba.html">Master of Business Administration
-                                                                (MBA)</a></li>
-                                                        <li><a href="emba.html">Executive MBA (EMBA)</a></li>
-                                                    </ul>
+                                                    <a href="{{ route('index.admission',['type'=>'Postgraduate Admission']) }}">Postgraduate Admission</a>
                                                 </li>
                                                 <li><a href="admission-notice.html">Admission Notice</a></li>
                                                 <li><a href="admission-request.html">Admission</a></li>
