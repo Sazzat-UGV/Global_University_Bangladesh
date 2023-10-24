@@ -20,7 +20,7 @@ class SliderController extends Controller
     public function index()
     {
         Gate::authorize('slider-list');
-        $sliders = Slider::select('id', 'slider_heading', 'slider_details', 'slider_image', 'is_active', 'created_at')->latest('id')->get();
+        $sliders = Slider::select('id', 'slider_heading', 'slider_image', 'is_active', 'created_at')->latest('id')->get();
         return view('backend.pages.slider.index', compact('sliders'));
     }
 
@@ -41,7 +41,6 @@ class SliderController extends Controller
         Gate::authorize('slider-create');
         $slider = Slider::Create([
             "slider_heading" => $request->slider_heading,
-            "slider_details" => $request->slider_details,
         ]);
         $this->image_upload($request, $slider->id);
         Toastr::success('slider created successfully');
@@ -75,7 +74,6 @@ class SliderController extends Controller
         $slider = Slider::findOrFail($id);
         $slider->update([
             "slider_heading" => $request->slider_heading,
-            "slider_details" => $request->slider_details,
         ]);
         $this->image_upload($request, $slider->id);
         Toastr::success('slider updated successfully');

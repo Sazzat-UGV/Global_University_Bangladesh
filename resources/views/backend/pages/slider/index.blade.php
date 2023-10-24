@@ -33,7 +33,6 @@
                                         <th>Created at</th>
                                         <th>Image</th>
                                         <th>Heading</th>
-                                        <th>Details</th>
                                         @can('slider-edit')
                                             <th>Status</th>
                                         @endcan
@@ -50,7 +49,6 @@
                                             <td><img src="{{ asset('uploads/slider') }}/{{ $slider->slider_image }}"
                                                 alt="slider image" class="w-50"></td>
                                                 <td class="text-wrap">{{ $slider->slider_heading }}</td>
-                                                <td class="text-wrap">{{ $slider->slider_details }}</td>
 
                                                 @can('slider-edit')
                                                 <td>
@@ -164,15 +162,7 @@
             $(document).ready(function() {
                 $('#example').DataTable({
                     pagingType: 'first_last_numbers',
-                    columnDefs: [
-                        { width: '5%', targets: 0 },
-                        { width: '10%', targets: 1 },
-                        { width: '40%', targets: 2 },
-                        { width: '15%', targets: 3 },
-                        { width: '20%', targets: 4 },
-                        { width: '5%', targets: 5 },
-                        { width: '5%', targets: 6 },
-                    ]
+                    
                 });
 
             });

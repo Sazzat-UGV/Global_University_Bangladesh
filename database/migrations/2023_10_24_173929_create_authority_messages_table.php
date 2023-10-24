@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sliders', function (Blueprint $table) {
+        Schema::create('authority_messages', function (Blueprint $table) {
             $table->id();
-            $table->string('slider_heading');
-            $table->string('slider_image')->default('default_slider');
-            $table->boolean('is_active')->default(true);
+            $table->string('authority_name');
+            $table->string('authority_type');
+            $table->longText('authority_message');
+            $table->string('authority_image');
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sliders');
+        Schema::dropIfExists('authority_messages');
     }
 };

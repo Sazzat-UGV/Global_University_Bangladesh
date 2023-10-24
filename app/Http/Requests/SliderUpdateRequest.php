@@ -23,7 +23,6 @@ class SliderUpdateRequest extends FormRequest
     {
         return [
             'slider_heading'=>'required|string|max:100',
-            'slider_details'=>'required|string|max:255',
             'slider_image'=>'nullable|mimes:png,jpg|max:10240',
         ];
     }

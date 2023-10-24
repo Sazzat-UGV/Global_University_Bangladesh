@@ -23,6 +23,7 @@
             Auth::user()->haspermission('result-list') ||
             Auth::user()->haspermission('contact-list') ||
             Auth::user()->haspermission('requirment-list') ||
+            Auth::user()->haspermission('message-list') ||
             Auth::user()->haspermission('notice-list'))
         <div class="sidebar-heading">
             Interfaces
@@ -127,6 +128,14 @@
                         @endcan
                     </div>
                 </div>
+            </li>
+        @endcan
+
+        @can('message-list')
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('authority-message.index') }}">
+                    <i class="fas fa-fw fa-user-check"></i>
+                    <span>Authority Message</span></a>
             </li>
         @endcan
 

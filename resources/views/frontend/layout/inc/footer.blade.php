@@ -2,18 +2,13 @@
     <div class="container">
         <div class="newsletter-wrap">
             <div class="row y-middle">
-                <div class="col-md-6 sm-mb-30">
-                    <div class="sec-title">
+                <div class="col-md-12 sm-mb-30">
+                    <div class="sec-title text-center">
                         <div class="sub-title white-color">Newsletter</div>
-                        <h2 class="title mb-0 white-color">Subscribe Us to join <br> Our Community </h2>
+                        <h2 class="title mb-0 white-color">Admission Going On </h2>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <form class="newsletter-form">
-                        <input type="email" name="email" placeholder="Enter Your Email" required="">
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
+
             </div>
         </div>
     </div>

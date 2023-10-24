@@ -34,18 +34,6 @@
                             </div>
 
                             <div class="form-group">
-                                <label>Slider Details<span class="text-danger">*</span></label>
-                                <textarea name="slider_details" id="" cols="30" rows="5"
-                                    class="form-control @error('slider_details')
-                                is-invalid
-                                @enderror"
-                                    placeholder="Enter slider details">{{ old('slider_heading') }}</textarea>
-                                @error('slider_details')
-                                    <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
-                                @enderror
-                            </div>
-
-                            <div class="form-group">
                                 <label>Slider Image (1600*600)<span class="text-danger">*</span></label>
                                 <input type="file" name="slider_image"
                                     class="form-control dropify @error('slider_image')

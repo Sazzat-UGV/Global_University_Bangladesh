@@ -75,6 +75,12 @@ class PermissionSeeder extends Seeder
             'Requirment Edit',
             'Requirment Delete',
         ];
+        $adminAuthorityMessagesPermissionArray = [
+            'Message List',
+            // 'Message Create',
+            'Message Edit',
+            // 'Message Delete',
+        ];
         $adminContactsPermissionArray = [
             'Contact List',
             'Contact Delete',
@@ -141,6 +147,15 @@ class PermissionSeeder extends Seeder
                 'module_id' => $adminAdmissionRequirmentsModule->id,
                 'permission_name' => $adminAdmissionRequirmentsPermissionArray[$i],
                 'permission_slug' => Str::slug($adminAdmissionRequirmentsPermissionArray[$i]),
+            ]);
+        }
+        //AuthorityMessages
+        $adminAuthorityMessagesModule = Module::where('module_name', 'Authority Messages')->select('id')->first();
+        for ($i = 0; $i < count($adminAuthorityMessagesPermissionArray); $i++) {
+            Permission::Create([
+                'module_id' => $adminAuthorityMessagesModule->id,
+                'permission_name' => $adminAuthorityMessagesPermissionArray[$i],
+                'permission_slug' => Str::slug($adminAuthorityMessagesPermissionArray[$i]),
             ]);
         }
 

@@ -69,8 +69,6 @@
                                                 <li class="menu-item-has-children">
                                                     <a href="{{ route('index.admission',['type'=>'Postgraduate Admission']) }}">Postgraduate Admission</a>
                                                 </li>
-                                                <li><a href="admission-notice.html">Admission Notice</a></li>
-                                                <li><a href="admission-request.html">Admission</a></li>
                                             </ul>
                                         </li>
 

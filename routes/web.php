@@ -5,6 +5,7 @@ use App\Http\Controllers\backend\AdmissionController;
 use App\Http\Controllers\backend\AdmissionRequirmentController;
 use App\Http\Controllers\backend\auth\LoginController;
 use App\Http\Controllers\backend\AuthorityController;
+use App\Http\Controllers\backend\AuthorityMessageController;
 use App\Http\Controllers\backend\BackupDatabaseController;
 use App\Http\Controllers\backend\ContactController;
 use App\Http\Controllers\backend\DashboardController;
@@ -17,11 +18,14 @@ use App\Http\Controllers\backend\SystemAdminController;
 use App\Http\Controllers\DownloadPDFController;
 use App\Http\Controllers\frontend\AdmissionRequirmentController as FrontendAdmissionRequirmentController;
 use App\Http\Controllers\frontend\AuthorityController as FrontendAuthorityController;
+use App\Http\Controllers\frontend\AuthorityMessage as FrontendAuthorityMessage;
+use App\Http\Controllers\frontend\AuthorityMessageController as FrontendAuthorityMessageController;
 use App\Http\Controllers\frontend\ContactController as FrontendContactController;
 use App\Http\Controllers\frontend\FacultyController as FrontendFacultyController;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\frontend\NoticeController as FrontendNoticeController;
 use App\Http\Controllers\frontend\ResultController as FrontendResultController;
+use App\Models\AuthorityMessage;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,6 +54,7 @@ Route::prefix('')->group(function () {
     Route::get('/faculty/{department}', [FrontendFacultyController::class, 'index'])->name('index.faculty');
     Route::get('/authority/{type}', [FrontendAuthorityController::class, 'index'])->name('index.authority');
     Route::get('/admission/{type}', [FrontendAdmissionRequirmentController::class, 'index'])->name('index.admission');
+    Route::get('/authority-message/{type}', [FrontendAuthorityMessageController::class, 'view'])->name('view.authorityMessage');
 
 });
 
@@ -91,6 +96,7 @@ Route::prefix('admin')->group(function () {
     Route::resource('faculty', FacultyController::class);
     Route::resource('authority', AuthorityController::class);
     Route::resource('requirment', AdmissionRequirmentController::class);
+    Route::resource('authority-message', AuthorityMessageController::class)->only(['index','edit','update']);
 
     /*Ajax call */
     Route::get('check/is_active/{id}', [SystemAdminController::class, 'changeStatus'])->name('admin.active.ajax');

@@ -22,6 +22,7 @@ class ModuleSeeder extends Seeder
             'Results',
             'Notices',
             'Admission Requirments',
+            'Authority Messages',
             'Contacts',
             'System Roles',
             'System Admins',
