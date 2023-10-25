@@ -20,7 +20,7 @@ class RoleController extends Controller
     public function index()
     {
         Gate::authorize('role-list');
-        $roles = Role::with(['permissions:id,permission_name,permission_slug'])->whereNot('id', 3)->select('id', 'role_name', 'is_deleteable', 'updated_at')->latest('id')->get();
+        $roles = Role::with(['permissions:id,permission_name,permission_slug'])->select('id', 'role_name', 'is_deleteable', 'updated_at')->latest('id')->get();
         return view('backend.pages.role.index', compact('roles'));
     }
 

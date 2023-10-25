@@ -76,7 +76,7 @@
             <div class="row y-middle">
                 <div class="col-lg-4 md-mb-20">
                     <div class="footer-logo md-text-center">
-                        <a href="index.html"><img src="{{ asset('assets/frontend') }}/images/logo.png" alt=""></a>
+                        <a href="#"><img src="{{ asset('assets/frontend') }}/images/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-4 md-mb-20">
