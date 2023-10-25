@@ -34,12 +34,12 @@ class RoleSeeder extends Seeder
             'is_deleteable' => true,
         ]);
 
-        //Create a User role
-        Role::Create([
-            'role_name' => 'User',
-            'role_slug' => 'user',
-            'role_note' => 'user has no permissions',
-            'is_deleteable' => true,
-        ]);
+        // //Create a User role
+        // Role::Create([
+        //     'role_name' => 'User',
+        //     'role_slug' => 'user',
+        //     'role_note' => 'user has no permissions',
+        //     'is_deleteable' => true,
+        // ]);
     }
 }

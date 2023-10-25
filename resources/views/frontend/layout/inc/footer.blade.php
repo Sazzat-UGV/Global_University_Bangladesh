@@ -20,19 +20,21 @@
                 <div class="col-lg-3 col-md-12 col-sm-12 footer-widget md-mb-50">
                     <h4 class="widget-title">USEFUL LINKS</h4>
                     <ul class="site-map">
-                        <li><a href="#">Undergraduate Programs</a></li>
-                        <li><a href="#">Postgraduate Programs</a></li>
-                        <li><a href="#">Admission Notice</a></li>
-                        <li><a href="#">Admission Requirement</a></li>
+                        <li><a href="{{ route('index.admission',['type'=>'Undergraduate Admission']) }}">Undergraduate Programs</a></li>
+                        <li><a href="{{ route('index.admission',['type'=>'Postgraduate Admission']) }}">Postgraduate Programs</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-12 col-sm-12 footer-widget md-mb-50">
                     <h4 class="widget-title">Quick Links</h4>
                     <ul class="site-map">
-                        <li><a href="#">Science & Technology</a></li>
-                        <li><a href="#">Business Adminstration</a></li>
-                        <li><a href="#">LAW</a></li>
-                        <li><a href="#">Arts & Social Science</a></li>
+                        <li><a href="{{ route('index.faculty', ['department' => 'Computer Science and Engineering']) }}">Computer
+                            Science And
+                            Engineering</a></li>
+                        <li><a href="{{ route('index.faculty', ['department' => 'Bachelor of Business Administration']) }}">Bachelor
+                            of Business
+                            Administration</a></li>
+                        <li><a href="{{ route('index.faculty', ['department' => 'Bachelor of Laws']) }}">Bachelor
+                            of LAWS</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-12 col-sm-12 footer-widget md-mb-50">

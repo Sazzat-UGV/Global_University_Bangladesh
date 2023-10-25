@@ -23,7 +23,7 @@ class AuthorityMessageSeeder extends Seeder
             I must believe that the illuminating birth of this university is to pay a profound homage to our sacrificed hearts who remain eternally in our heart and their fulfillment of dream. The southern part of our country lags behind because of the shortage of universities, the limitations of opportunities to be efficient and dynamic and the lack of higher education that creates leadership. So, this university will eliminate this type of deficits with its outstanding and dynamic performance. I also do believe that this small piece of land is the fossil of our ancestors and this university will be an illuminating lighthouse on this land that will enlighten its surroundings.
 
             I hope that Global University Bangladesh will go ahead with its radiance and dynamism and will achieve a prestigious cliff for quality and standard education.',
-            'authority_image'=>'1.jpg'
+          
         ]);
         AuthorityMessage::create([
             'authority_type'=>'Chairman',
@@ -35,7 +35,7 @@ class AuthorityMessageSeeder extends Seeder
             Our university will produce competent graduates in their selected disciplines who will have productive careers or will choose to engage in advanced studies. Our students will be life-long learners with good leadership skills, more efficient in oral, written and electronic communication, critical thinkers of well-developed analytical skills, ethically and socially responsible, champion of diversity and tolerance and globally aware with commitment to social justice and sustainability.
 
             I take pride to remain with an educational institution which will nurture individual excellence and dignity as well as charitable, non-profitable and philanthropic approach to society.',
-            'authority_image'=>'2.jpg'
+
         ]);
         AuthorityMessage::create([
             'authority_type'=>'President',
@@ -47,7 +47,7 @@ class AuthorityMessageSeeder extends Seeder
             I do believe this university is the manifestation of paying homage to the great philanthropists who sacrificed themselves for our freedom, emancipation and the betterment of Golden Bangladesh
 
             I feel proud to remain with this academic institution which will be the center of communication and information technology. I hope this university will go ahead with success.',
-            'authority_image'=>'3.jpg'
+
         ]);
     }
 }

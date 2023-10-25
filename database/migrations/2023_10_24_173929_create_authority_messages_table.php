@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('authority_name');
             $table->string('authority_type');
             $table->longText('authority_message');
-            $table->string('authority_image');
+            $table->string('authority_image')->default('default_image.jpg');
             $table->timestamps();
         });
     }
