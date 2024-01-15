@@ -23,8 +23,6 @@
                             <img class="img-fluid slider-image"
                                 src="{{ asset('uploads/slider') }}/{{ $slider->slider_image }}" alt="silder image ">
                             <div class="slider-text">
-                                <div class="sl-sub-title white-color wow bounceInLeft" data-wow-delay="300ms"
-                                    data-wow-duration="2000ms">Global University Bangladesh</div>
                                 <h1 class="sl-title white-color wow fadeInRight" data-wow-delay="600ms"
                                     data-wow-duration="2000ms">{{ $slider->slider_heading }}</h1>
                             </div>
